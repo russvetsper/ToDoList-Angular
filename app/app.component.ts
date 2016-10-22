@@ -1,42 +1,42 @@
 import { Component } from '@angular/core';
-import { Task } from './task.model';
+import { Meal } from './meal.model';
 
 @Component({
   selector: 'my-app',
   template: `
   <div class="container">
-    <h1>My First Angular 2 App</h1>
-    <pies></pies>
-    <task-list
-      [childTaskList]="masterTaskList"
+    <h1>Meal Tracker</h1>
+
+    <meal-list
+      [childMealList]="masterMealList"
       (clickSender)="showDetails($event)"
-     ></task-list>
-    <edit-task
-      [childSelectedTask]="selectedTask"
+     ></meal-list>
+    <edit-meal
+      [childSelectedMeal]="selectedMeal"
       (doneClickedSender)="finishedEditing()"
-    ></edit-task>
-    <new-task
-      (newTaskSender)="addTask($event)"
-    ></new-task>
+    ></edit-meal>
+    <new-meal
+      (newMealSender)="addMeal($event)"
+    ></new-meal>
   </div>
   `
 })
 
 export class AppComponent {
-  public masterTaskList: Task[] = [
-      new Task("Create To-Do List app.", 0),
-      new Task("Learn Kung Fu.", 1),
-      new Task("Rewatch all the Lord of the Rings movies.", 2),
-      new Task("Do the laundry.", 3)
+  public masterMealList: Meal[] = [
+      new Meal("foodName1", "foodDescription1", 498),
+      new Meal("foodName2", "foodDescription2", 499),
+      new Meal("foodName3", "foodDescription3", 501),
+      new Meal("foodName4", "foodDescription4", 502),
   ];
-  selectedTask: Task = null;
-  showDetails(clickedTask: Task) {
-    this.selectedTask = clickedTask;
+  selectedMeal: Meal = null;
+  showDetails(clickedMeal: Meal) {
+    this.selectedMeal = clickedMeal;
   }
   finishedEditing() {
-    this.selectedTask = null;
+    this.selectedMeal = null;
   }
-  addTask(newTaskFromChild: Task) {
-    this.masterTaskList.push(newTaskFromChild);
+  addMeal(newMealFromChild: Meal) {
+    this.masterMealList.push(newMealFromChild);
   }
 }
