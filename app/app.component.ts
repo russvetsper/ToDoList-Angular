@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 import { Meal } from './meal.model';
 
@@ -6,7 +7,6 @@ import { Meal } from './meal.model';
   template: `
   <div class="container">
     <h1>Meal Tracker</h1>
-
     <meal-list
       [childMealList]="masterMealList"
       (clickSender)="showDetails($event)"

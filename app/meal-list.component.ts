@@ -12,6 +12,12 @@ import { Meal } from './meal.model';
     </select>
     <div *ngFor="let currentMeal of childMealList | completeness:selectedCompleteness">
       <meal-display [meal]="currentMeal"></meal-display>
+      <h3>{{currentMeal.name}} | {{currentMeal.description}} | {{currentMeal.calories}}</h3>
+    <form *ngIf="currentMeal === selectedMeal">
+      <input [(ngModel)]="currentMeal.name">
+      <input [(ngModel)]="currentMeal.description">
+      <input [(ngModel)]="currentMeal.calories" type="number"  aria-label="amount">
+    </form>
       <button (click)="editButtonHasBeenClicked(currentMeal)">Edit</button>
     </div>
   `

@@ -8,6 +8,7 @@ import { Meal } from './meal.model';
     <p *ngIf="meal.calories < 500" ></p>
     <p *ngIf="meal.calories > 500" ></p>
     <label>{{ meal.name }}</label>
+
   </div>
   `
 })

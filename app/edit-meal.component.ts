@@ -7,14 +7,19 @@ import { Meal } from './meal.model';
     <div *ngIf="childSelectedMeal">
       <h1>Edit Meal</h1>
       <div>
-        <label>Enter Meal Description:</label>
+        <label>Enter Meal Nem:</label>
         <input [(ngModel)]="childSelectedMeal.name">
       </div>
       <div>
-        <label>Enter Meal ID:</label>
-        <input [(ngModel)]="childSelectedMeal.id">
-        <button (click)="doneClicked()">Done</button>
+        <label>Enter Meal description:</label>
+        <input [(ngModel)]="childSelectedMeal.description">
       </div>
+      <div>
+        <label>Enter Meal calories:</label>
+        <input [(ngModel)]="childSelectedMeal.calories">
+      </div>
+      <button (click)="doneClicked()">Done</button>
+
     </div>
   `
 })
