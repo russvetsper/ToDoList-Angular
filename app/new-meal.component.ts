@@ -6,7 +6,6 @@ import { Meal } from './meal.model';
   template: `
     <h1>New Meal</h1>
     <div>
-      <label>Enter Meal Description:</label>
     
     </div>
     <div>

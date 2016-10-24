@@ -10,9 +10,12 @@ import { Meal } from './meal.model';
       <option value="isUnder500">Show under 500</option>
       <option value="isOver500" selected="selected">Show over 500</option>
     </select>
-    <div *ngFor="let currentMeal of childMealList | completeness:selectedCompleteness">
-      <meal-display [meal]="currentMeal"></meal-display>
-      <h3>{{currentMeal.name}} | {{currentMeal.description}} | {{currentMeal.calories}}</h3>
+    <div class="list" *ngFor="let currentMeal of childMealList | completeness:selectedCompleteness">
+    <h3>  <meal-display [meal]="currentMeal"></meal-display></h3>
+    <ul>
+      <h3>Description: {{currentMeal.description}}</h3>
+      <h3>Calories: {{currentMeal.calories}}</h3>
+    </ul>
     <form *ngIf="currentMeal === selectedMeal">
       <input [(ngModel)]="currentMeal.name">
       <input [(ngModel)]="currentMeal.description">
